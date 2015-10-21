@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Ciclo de Vida de Java Server Face (JSF)</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="txtNombre" value="Nombre:"/>
+                <h:inputText id="txtNombre" value="#{clienteControlador.cliente.nombre}" />
+                <h:outputLabel for="txtApellido" value="Apellido:"/>
+                <h:inputText id="txtApellido" value="#{clienteControlador.cliente.apellido}" />
+                <h:outputLabel for="txtFechaNac" value="Fecha de Nacimiento:"/>
+                <h:inputText id="txtFechaNac" value="#{clienteControlador.cliente.fechaNac}">
+                    <f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
+                </h:inputText>
+                <h:outputLabel for="txtProvincia" value="Provincia:"/>
+                <h:inputText id="txtProvincia" value="#{clienteControlador.cliente.provincia}" />
+                <h:outputLabel for="txtCalle" value="Calle:"/>
+                <h:inputText id="txtCalle" value="#{clienteControlador.cliente.calle}" />
+                <h:outputLabel for="txtNumero" value="Numero:"/>
+                <h:inputText id="txtNumero" value="#{clienteControlador.cliente.numero}" />                
+            </h:panelGrid>
+            <h:commandButton value="Grabar" actionListener="#{clienteControlador.grabar()}" />
+            <h:commandButton value="Cancelar" immediate="true" action="index" />
+        </h:form>
+    </h:body>
+</html>
+
